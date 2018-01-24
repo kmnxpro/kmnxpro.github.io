@@ -65,12 +65,20 @@ function handleSuccess(stream) {
 function paintToCanvas() {
   var width = video.videoWidth;
   var height = video.videoHeight;
-  canvas.width = 640; //width;
-  canvas.height = 480; //height;
-  ctx.drawImage(video, 0, 0, 640, 480);  //width, height);
-  ctx.fillStyle = 'rgb(200,0,0)'; // sets the color to fill in the rectangle with
-  ctx.fillRect(10, 10, 55, 50);
+  canvas.width = width;
+  canvas.height = height;
+
+  function step() {
+    window.requestAnimationFrame(step);
+    ctx.drawImage(video, 0, 0, width, height);
+    ctx.fillStyle = 'rgb(200,0,0)'; // sets the color to fill in the rectangle with
+    ctx.fillRect(10, 10, 55, 50);
+  }
+
+  window.requestAnimationFrame(step);
+
   console.log("video width", video.videoWidth);
+  console.log("video height", video.videoHeight);
 
 }
 
