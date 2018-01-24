@@ -20,7 +20,7 @@ var VT;
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
   audio: false,
-  video: { facingMode: "environment" } //true   // { facingMode: "user" }
+  video: true //{ facingMode: "environment" } //true   // { facingMode: "user" }
 };
 
 function handleSuccess(stream) {
@@ -57,7 +57,7 @@ function handleSuccess(stream) {
   video.srcObject = stream;
 
   // BEGIN Added 20180124
-  video.style['display'] = 'none';
+  //video.style['display'] = 'none';
   // END Added 20180124
 
 }
