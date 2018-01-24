@@ -114,7 +114,7 @@ navigator.mediaDevices.getUserMedia(constraints).
 // BEGIN Added 20180124
 
 video.addEventListener('canplay', paintToCanvas, false);
-video.addEventListener('resize', paintToCanvas, false);
+//video.addEventListener('resize', paintToCanvas, false);
 
 // END Added 20180124
 
