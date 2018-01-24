@@ -30,7 +30,7 @@ function handleSuccess(stream) {
   var tempLabelString = ''; //videoTracks.reduce((curr, next) => curr.label + ' ' + next.label);
   //videoTracks.forEach(x => console.log(x.label));        // tempLabelString.concat(String(x.label)));
   for (var i = 0; i < videoTracks.length; i += 1) {
-    tempLabelString.concat(videoTracks[i].label);
+    tempLabelString = tempLabelString.concat(videoTracks[i].label);
   }
   streamInfoDIV.innerText = (tempLabelString + " abc") || "didn't work";
   ST = stream;
