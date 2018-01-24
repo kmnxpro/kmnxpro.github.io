@@ -10,6 +10,7 @@
 
 var errorElement = document.querySelector('#errorMsg');
 var video = document.querySelector('video');
+var ST;
 var VT;
 
 // Put variables in global scope to make them available to the browser console.
@@ -26,6 +27,7 @@ function handleSuccess(stream) {
   // BEGIN Added 20180124
   var streamInfoDIV = document.getElementById('stream-info');
   streamInfoDIV.innerText = videoTracks.length; //JSON.stringify(videoTracks);
+  ST = stream;
   VT = videoTracks;
   // END Added 20180124
 
