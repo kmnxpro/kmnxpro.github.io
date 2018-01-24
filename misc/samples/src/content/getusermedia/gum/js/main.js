@@ -98,8 +98,18 @@ function errorMsg(msg, error) {
 }
 
 navigator.mediaDevices.getUserMedia(constraints).
-    then(function(handleSuccess).catch(handleError);
+    then(handleSuccess).catch(handleError);
+
+
+// BEGIN Added 20180124
 
 video.addEventListener('canplay', paintToCanvas, false);
+
+// END Added 20180124
+
+
+
+
+
 
 
