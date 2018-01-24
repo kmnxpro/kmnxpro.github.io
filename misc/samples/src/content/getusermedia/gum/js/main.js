@@ -77,8 +77,10 @@ function paintToCanvas() {
 
   window.requestAnimationFrame(step);
 
-  console.log("video width", video.videoWidth);
-  console.log("video height", video.videoHeight);
+  console.log("video.videoWidth", video.videoWidth);
+  console.log("video.videoHeight", video.videoHeight);
+  console.log("video.width", video.width);
+  console.log("video.height", video.height);
 
 }
 
@@ -112,6 +114,7 @@ navigator.mediaDevices.getUserMedia(constraints).
 // BEGIN Added 20180124
 
 video.addEventListener('canplay', paintToCanvas, false);
+video.addEventListener('resize', paintToCanvas, false);
 
 // END Added 20180124
 
