@@ -18,7 +18,7 @@ var ST;
 var VT;
 
 var video = document.createElement('video');
-video.id = 'gum-local';
+video.id = 'gum-local2';
 video.autoplay = true;
 video.playsinline = true;
 
