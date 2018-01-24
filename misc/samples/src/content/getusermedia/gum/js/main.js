@@ -114,8 +114,9 @@ navigator.mediaDevices.getUserMedia(constraints).
 
 // BEGIN Added 20180124
 
-video.addEventListener('canplay', paintToCanvas, false);
+video.addEventListener('canplay', paintToCanvas, { once: true });  //false);
 video.addEventListener('resize', function() {
+  paintToCanvas();  // DESTROY PREVIOUS REQ ANIM FRAME (?)
   console.log('VIDEO RESIZE', video.videoWidth);
   resizeInfoDIV.innerText = "Width: " + video.videoWidth + " ; Height:" + video.videoHeight;
 }, false);
