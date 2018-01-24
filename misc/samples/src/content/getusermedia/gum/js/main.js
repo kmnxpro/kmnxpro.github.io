@@ -26,7 +26,8 @@ function handleSuccess(stream) {
 
   // BEGIN Added 20180124
   var streamInfoDIV = document.getElementById('stream-info');
-  streamInfoDIV.innerText = videoTracks.length; //JSON.stringify(videoTracks);
+  //streamInfoDIV.innerText = videoTracks.length; //JSON.stringify(videoTracks);
+  streamInfoDIV.innerText = videoTracks.map(x => JSON.stringify(x));
   ST = stream;
   VT = videoTracks;
   // END Added 20180124
