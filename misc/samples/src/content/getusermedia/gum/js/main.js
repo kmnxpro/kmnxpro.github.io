@@ -36,6 +36,9 @@ function handleSuccess(stream) {
 
   navigator.mediaDevices.enumerateDevices().then(function(x) {
     console.log(x, Array.isArray(x));
+    for (var i = 0; i < x.length; i += 1) {
+      console.log(JSON.stringify(x));
+    }
   });
 
   ST = stream;
