@@ -24,7 +24,7 @@ function handleSuccess(stream) {
 
   // BEGIN Added 20180124
   var streamInfoDIV = document.getElementById('stream-info');
-  streamInfoDIV.innerText = videoTracks;
+  streamInfoDIV.innerText = JSON.stringify(videoTracks);
   // END Added 20180124
 
   stream.oninactive = function() {
