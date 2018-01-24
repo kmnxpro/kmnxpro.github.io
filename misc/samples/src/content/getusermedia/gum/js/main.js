@@ -21,6 +21,12 @@ function handleSuccess(stream) {
   var videoTracks = stream.getVideoTracks();
   console.log('Got stream with constraints:', constraints);
   console.log('Using video device: ' + videoTracks[0].label);
+
+  // BEGIN Added 20180124
+  var streamInfoDIV = document.getElementById('stream-info');
+  streamInfoDIV.innerText = videoTracks;
+  // END Added 20180124
+
   stream.oninactive = function() {
     console.log('Stream inactive');
   };
