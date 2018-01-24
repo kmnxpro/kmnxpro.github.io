@@ -56,6 +56,10 @@ function handleSuccess(stream) {
   window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
 
+  // BEGIN Added 20180124
+  video.style['display'] = 'none';
+  // END Added 20180124
+
 }
 
 
