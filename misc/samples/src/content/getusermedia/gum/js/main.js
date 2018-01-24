@@ -47,6 +47,16 @@ function handleSuccess(stream) {
   ST = stream;
   VT = videoTracks;
 
+  // END Added 20180124
+
+  stream.oninactive = function() {
+    console.log('Stream inactive');
+  };
+  window.stream = stream; // make variable available to browser console
+  video.srcObject = stream;
+
+
+  // BEGIN Added 20180124
 
   // CANVAS
   var width = video.videoWidth;
@@ -55,13 +65,8 @@ function handleSuccess(stream) {
   canvas.height = height;
   ctx.drawImage(video, 0, 0, width, height);
   console.log("video width", video.videoWidth);
-  // END Added 20180124
 
-  stream.oninactive = function() {
-    console.log('Stream inactive');
-  };
-  window.stream = stream; // make variable available to browser console
-  video.srcObject = stream;
+  // END Added 20180124
 }
 
 function handleError(error) {
