@@ -9,7 +9,7 @@
 'use strict';
 
 var errorElement = document.querySelector('#errorMsg');
-//var video = document.querySelector('video');
+var video = document.querySelector('video');
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var filmstrip = document.getElementById('filmstrip');
@@ -17,10 +17,10 @@ var resizeInfoDIV = document.getElementById('resize-info');
 var ST;
 var VT;
 
-var video = document.createElement('video');
-video.id = 'gum-local2';
-video.autoplay = true;
-video.playsinline = true;
+//var video = document.createElement('video');
+//video.id = 'gum-local';
+//video.autoplay = true;
+//video.playsinline = true;
 
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
@@ -143,6 +143,13 @@ video.addEventListener('resize', function() {
 
 
 
+
+
+
+// HELPFUL LINKS
+// 1. https://developers.google.com/web/updates/2016/10/addeventlistener-once
+// 2. 
+// 3. 
 
 
 
