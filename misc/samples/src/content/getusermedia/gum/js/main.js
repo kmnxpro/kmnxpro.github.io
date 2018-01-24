@@ -28,7 +28,7 @@ function handleSuccess(stream) {
   var streamInfoDIV = document.getElementById('stream-info');
   //streamInfoDIV.innerText = videoTracks.length; //JSON.stringify(videoTracks);
   var tempLabelString = '';
-  videoTracks.forEach(x => tempLabelString.concat(x.label));
+  videoTracks.forEach(x => tempLabelString.concat(String(x.label)));
   streamInfoDIV.innerText = tempLabelString;
   ST = stream;
   VT = videoTracks;
