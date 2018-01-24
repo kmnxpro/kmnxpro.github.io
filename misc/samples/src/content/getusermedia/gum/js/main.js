@@ -62,7 +62,7 @@ function handleSuccess(stream) {
 
 // CANVAS
 
-function handleCanvas() {
+function paintToCanvas() {
   var width = video.videoWidth;
   var height = video.videoHeight;
   canvas.width = 640; //width;
@@ -98,10 +98,8 @@ function errorMsg(msg, error) {
 }
 
 navigator.mediaDevices.getUserMedia(constraints).
-    then(function(stream) {
-      handleSuccess(stream);
-      handleCanvas();
-    }).catch(handleError);
+    then(function(handleSuccess).catch(handleError);
 
+video.addEventListener('canplay', paintToCanvas, false);
 
 
