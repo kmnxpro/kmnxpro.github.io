@@ -65,9 +65,9 @@ function handleSuccess(stream) {
 function handleCanvas() {
   var width = video.videoWidth;
   var height = video.videoHeight;
-  canvas.width = width;
-  canvas.height = height;
-  ctx.drawImage(video, 0, 0, width, height);
+  canvas.width = 640; //width;
+  canvas.height = 480; //height;
+  ctx.drawImage(video, 0, 0, 640, 480);  //width, height);
   console.log("video width", video.videoWidth);
 
 }
