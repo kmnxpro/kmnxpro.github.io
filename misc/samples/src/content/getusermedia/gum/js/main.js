@@ -10,6 +10,7 @@
 
 var errorElement = document.querySelector('#errorMsg');
 var video = document.querySelector('video');
+var VT;
 
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
@@ -25,6 +26,7 @@ function handleSuccess(stream) {
   // BEGIN Added 20180124
   var streamInfoDIV = document.getElementById('stream-info');
   streamInfoDIV.innerText = JSON.stringify(videoTracks);
+  VT = videoTracks;
   // END Added 20180124
 
   stream.oninactive = function() {
