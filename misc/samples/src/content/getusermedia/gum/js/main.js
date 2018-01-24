@@ -27,8 +27,11 @@ function handleSuccess(stream) {
   // BEGIN Added 20180124
   var streamInfoDIV = document.getElementById('stream-info');
   //streamInfoDIV.innerText = videoTracks.length; //JSON.stringify(videoTracks);
-  var tempLabelString = videoTracks.reduce((curr, next) => curr.label + ' ' + next.label);
+  var tempLabelString = ''; //videoTracks.reduce((curr, next) => curr.label + ' ' + next.label);
   //videoTracks.forEach(x => console.log(x.label));        // tempLabelString.concat(String(x.label)));
+  for (var i = 0; i < videoTracks.length; i += 1) {
+    tempLabelString.concat(videoTracks[i].label);
+  }
   streamInfoDIV.innerText = (tempLabelString + " abc") || "didn't work";
   ST = stream;
   VT = videoTracks;
