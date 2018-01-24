@@ -27,7 +27,9 @@ function handleSuccess(stream) {
   // BEGIN Added 20180124
   var streamInfoDIV = document.getElementById('stream-info');
   //streamInfoDIV.innerText = videoTracks.length; //JSON.stringify(videoTracks);
-  streamInfoDIV.innerText = videoTracks.forEach(x => streamInfoDIV.innerText.concat(x.label));
+  var tempLabelString = '';
+  videoTracks.forEach(x => tempLabelString.concat(x.label));
+  streamInfoDIV.innerText = tempLabelString;
   ST = stream;
   VT = videoTracks;
   // END Added 20180124
