@@ -57,7 +57,7 @@ function handleSuccess(stream) {
   video.srcObject = stream;
 
   // BEGIN Added 20180124
-  //video.style['display'] = 'none';
+  video.style['display'] = 'none';
   // END Added 20180124
 
 }
