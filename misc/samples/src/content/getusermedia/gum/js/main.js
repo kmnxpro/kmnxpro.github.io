@@ -28,8 +28,8 @@ function handleSuccess(stream) {
   var streamInfoDIV = document.getElementById('stream-info');
   //streamInfoDIV.innerText = videoTracks.length; //JSON.stringify(videoTracks);
   var tempLabelString = '';
-  videoTracks.forEach(x => tempLabelString.concat(String(x.label)));
-  streamInfoDIV.innerText = tempLabelString || "didn't work";
+  videoTracks.forEach(x => console.log(x));        // tempLabelString.concat(String(x.label)));
+  streamInfoDIV.innerText = "didn't work";
   ST = stream;
   VT = videoTracks;
   // END Added 20180124
