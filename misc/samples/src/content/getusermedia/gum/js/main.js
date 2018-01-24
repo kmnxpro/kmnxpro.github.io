@@ -34,9 +34,11 @@ function handleSuccess(stream) {
   }
   streamInfoDIV.innerText = (tempLabelString + " abc") || "didn't work";
 
+  var enumDevicesDIV = document.getElementById('enumerate-devices');
   navigator.mediaDevices.enumerateDevices().then(function(x) {
     console.log(x, Array.isArray(x));
     console.log(JSON.stringify(x));
+    enumDevicesDIV.innerText = JSON.stringify(x);
   });
 
   ST = stream;
