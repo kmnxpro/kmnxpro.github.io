@@ -46,6 +46,14 @@ function handleSuccess(stream) {
 
   ST = stream;
   VT = videoTracks;
+
+
+  // CANVAS
+  var width = video.videoWidth;
+  var height = video.videoHeight;
+  canvas.width = width;
+  canvas.height = height;
+  ctx.drawImage(video, 0, 0, width, height);
   // END Added 20180124
 
   stream.oninactive = function() {
