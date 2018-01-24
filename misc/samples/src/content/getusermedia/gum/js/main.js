@@ -27,9 +27,9 @@ function handleSuccess(stream) {
   // BEGIN Added 20180124
   var streamInfoDIV = document.getElementById('stream-info');
   //streamInfoDIV.innerText = videoTracks.length; //JSON.stringify(videoTracks);
-  var tempLabelString = '';
-  videoTracks.forEach(x => console.log(x.label));        // tempLabelString.concat(String(x.label)));
-  streamInfoDIV.innerText = "didn't work";
+  var tempLabelString = videoTracks.reduce((cure, next) => curr.label + ' ' + next.label);
+  //videoTracks.forEach(x => console.log(x.label));        // tempLabelString.concat(String(x.label)));
+  streamInfoDIV.innerText = (tempLabelString + " abc") || "didn't work";
   ST = stream;
   VT = videoTracks;
   // END Added 20180124
