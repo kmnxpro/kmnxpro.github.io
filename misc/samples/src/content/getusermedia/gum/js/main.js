@@ -10,6 +10,9 @@
 
 var errorElement = document.querySelector('#errorMsg');
 var video = document.querySelector('video');
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+var filmstrip = document.getElementById('filmstrip');
 var ST;
 var VT;
 
