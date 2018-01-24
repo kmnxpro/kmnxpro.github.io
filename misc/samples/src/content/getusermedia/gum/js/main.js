@@ -54,6 +54,7 @@ function handleSuccess(stream) {
   canvas.width = width;
   canvas.height = height;
   ctx.drawImage(video, 0, 0, width, height);
+  console.log("video width", video.videoWidth);
   // END Added 20180124
 
   stream.oninactive = function() {
