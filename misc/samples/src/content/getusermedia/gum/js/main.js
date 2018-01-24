@@ -55,10 +55,14 @@ function handleSuccess(stream) {
   window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
 
+}
 
-  // BEGIN Added 20180124
 
-  // CANVAS
+// BEGIN Added 20180124
+
+// CANVAS
+
+function handleCanvas() {
   var width = video.videoWidth;
   var height = video.videoHeight;
   canvas.width = width;
@@ -66,8 +70,11 @@ function handleSuccess(stream) {
   ctx.drawImage(video, 0, 0, width, height);
   console.log("video width", video.videoWidth);
 
-  // END Added 20180124
 }
+
+// END Added 20180124
+
+
 
 function handleError(error) {
   if (error.name === 'ConstraintNotSatisfiedError') {
@@ -89,4 +96,10 @@ function errorMsg(msg, error) {
 }
 
 navigator.mediaDevices.getUserMedia(constraints).
-    then(handleSuccess).catch(handleError);
+    then(function(stream) {
+      handleSuccess(stream);
+      handleCanvas();
+    }).catch(handleError);
+
+
+
