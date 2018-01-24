@@ -13,6 +13,7 @@ var video = document.querySelector('video');
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var filmstrip = document.getElementById('filmstrip');
+var resizeInfoDIV = document.getElementById('resize-info');
 var ST;
 var VT;
 
@@ -116,6 +117,7 @@ navigator.mediaDevices.getUserMedia(constraints).
 video.addEventListener('canplay', paintToCanvas, false);
 video.addEventListener('resize', function() {
   console.log('VIDEO RESIZE', video.videoWidth);
+  resizeInfoDIV.innerText = "Width: " + video.videoWidth + " ; Height:" + video.videoHeight;
 }, false);
 
 // END Added 20180124
