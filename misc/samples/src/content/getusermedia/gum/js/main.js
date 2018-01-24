@@ -9,13 +9,18 @@
 'use strict';
 
 var errorElement = document.querySelector('#errorMsg');
-var video = document.querySelector('video');
+//var video = document.querySelector('video');
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var filmstrip = document.getElementById('filmstrip');
 var resizeInfoDIV = document.getElementById('resize-info');
 var ST;
 var VT;
+
+var video = document.createElement('video');
+video.id = 'gum-local';
+video.autoplay = true;
+video.playsinline = true;
 
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
@@ -57,13 +62,22 @@ function handleSuccess(stream) {
   video.srcObject = stream;
 
   // BEGIN Added 20180124
-  video.style['display'] = 'none';
+  //video.style['display'] = 'none';
   // END Added 20180124
 
 }
 
 
 // BEGIN Added 20180124
+
+// VIDEO
+
+//function handleSuccess02(stream) {
+//  var videoTracks = stream.getVideoTracks();
+//  console.log('Got stream with constraints:', constraints);
+//  console.log('Using video device: ' + videoTracks[0].label);
+//  video02.srcObject = stream;
+//}
 
 // CANVAS
 
