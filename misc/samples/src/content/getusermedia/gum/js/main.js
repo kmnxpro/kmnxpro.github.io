@@ -33,6 +33,11 @@ function handleSuccess(stream) {
     tempLabelString = tempLabelString.concat(videoTracks[i].label);
   }
   streamInfoDIV.innerText = (tempLabelString + " abc") || "didn't work";
+
+  navigator.mediaDevices.enumerateDevices().then(function(x) {
+    console.log(x, Array.isArray(x));
+  });
+
   ST = stream;
   VT = videoTracks;
   // END Added 20180124
