@@ -68,6 +68,8 @@ function handleCanvas() {
   canvas.width = 640; //width;
   canvas.height = 480; //height;
   ctx.drawImage(video, 0, 0, 640, 480);  //width, height);
+  ctx.fillStyle = 'rgb(200,0,0)'; // sets the color to fill in the rectangle with
+  ctx.fillRect(10, 10, 55, 50);
   console.log("video width", video.videoWidth);
 
 }
