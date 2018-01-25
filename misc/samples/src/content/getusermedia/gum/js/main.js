@@ -66,7 +66,7 @@ function handleSuccess(stream) {
   video.style.position = 'absolute';
   video.style.top = '0px';
   video.style.left = '0px';
-  video.style.z-index = 3;
+  video.style['z-index'] = 3;
   // END Added 20180124
 
 }
@@ -94,7 +94,7 @@ function paintToCanvas() {
   canvas.style.position = 'absolute';
   canvas.style.top = '0px';
   canvas.style.left = '0px';
-  canvas.style.z-index = 5;
+  canvas.style['z-index'] = 5;
 
   function step() {
     window.requestAnimationFrame(step);
