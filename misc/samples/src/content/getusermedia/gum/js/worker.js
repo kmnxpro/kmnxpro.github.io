@@ -15,6 +15,7 @@ SELF.addEventListener('message', function(event) {
   }
 
   SELF.postMessage({
-    dstData: imageData
+    dstData: imageData,
+    sss: 'RANDOM STRING'
   });
 }, false);
