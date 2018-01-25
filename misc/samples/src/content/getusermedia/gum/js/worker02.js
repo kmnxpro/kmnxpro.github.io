@@ -1,9 +1,9 @@
-var SELF = self
+//var SELF = self
 
-SELF.addEventListener('message', function(event) {
+self.addEventListener('message', function(event) {
 
 
-  SELF.postMessage({
-    sss: 'RANDOM STRING'
-  });
+  self.postMessage(String(event.data) + 'RANDOM STRING') //{
+  //  sss: 'RANDOM STRING'
+  //});
 }, false);
