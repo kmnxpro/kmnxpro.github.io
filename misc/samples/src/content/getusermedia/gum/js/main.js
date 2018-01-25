@@ -25,6 +25,16 @@ var VT;
 //video.playsinline = true;
 
 var wkr = new Worker('worker.js');
+var wkr02 = new Worker('worker02.js');
+
+wkr02.postMessage({
+  imageData: 'HELLO'
+});
+
+wkr02.addEventListener('message', function(event) {
+  console.log(event.data.sss);
+}, false);
+
 
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
@@ -114,9 +124,9 @@ function paintToCanvas() {
     var pixels = ctx.getImageData(0, 0, width, height);
     //pixels = processedPixels(pixels);
     //ctx.putImageData(pixels, 0, 0);
-    wkr.postMessage({
-      imageData: pixels
-    });
+    //wkr.postMessage({
+    //  imageData: pixels
+    //});
 
     /* Setup WebWorker return messaging */
     //wkr.onmessage = function(event) {
@@ -199,11 +209,11 @@ video.addEventListener('resize', function() {
   resizeInfoDIV.innerText = "Width: " + video.videoWidth + " ; Height:" + video.videoHeight;
 }, false);
 
-wkr.addEventListener('message', function(event) {
-  ctx.putImageData(event.data.dstData, 0, 0);
-  console.log(event.data.dstData);
-  console.log(event.data.sss);
-}, false);
+//wkr.addEventListener('message', function(event) {
+//  ctx.putImageData(event.data.dstData, 0, 0);
+//  console.log(event.data.dstData);
+//  console.log(event.data.sss);
+//}, false);
 
 // END Added 20180124
 
