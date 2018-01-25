@@ -114,9 +114,14 @@ function paintToCanvas() {
     var pixels = ctx.getImageData(0, 0, width, height);
     //pixels = processedPixels(pixels);
     //ctx.putImageData(pixels, 0, 0);
-    wkr.postMessage({
-      imageData: pixels
-    });
+    //wkr.postMessage({
+    //  imageData: pixels
+    //});
+
+    /* Setup WebWorker return messaging */
+    //wkr.onmessage = function(event) {
+    //  ctx.putImageData(event.data.dstData, 0, 0);
+    //}
   }
 
   window.requestAnimationFrame(step);
@@ -194,10 +199,6 @@ video.addEventListener('resize', function() {
   resizeInfoDIV.innerText = "Width: " + video.videoWidth + " ; Height:" + video.videoHeight;
 }, false);
 
-/* Setup WebWorker return messaging */
-wkr.onmessage = function(event){
-  ctx.putImageData(event.data.dstData, 0, 0);
-};
 
 // END Added 20180124
 
