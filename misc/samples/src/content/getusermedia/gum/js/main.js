@@ -149,7 +149,8 @@ navigator.mediaDevices.getUserMedia(constraints).
 // BEGIN Added 20180124
 
 function toggleCameraFacingMode() {
-  console.log('TOGGLE');
+  cameraFacingMode === "Back" ? cameraFacingMode = "Front" : cameraFacingMode = "Back";
+  console.log('NEW cameraFacingMode value: ', cameraFacingMode)
 }
 
 video.addEventListener('canplay', paintToCanvas, { once: true });  //false);
