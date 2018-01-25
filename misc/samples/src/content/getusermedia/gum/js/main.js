@@ -184,8 +184,11 @@ video.addEventListener('resize', function() {
 // 1. https://developers.google.com/web/updates/2016/10/addeventlistener-once
 // 2. https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
 // 3. https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize
-// 4. 
-
+// 4. https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/gum
+// 5. https://github.com/webrtc/samples/blob/gh-pages/src/content/devices/input-output/js/main.js
+// 6. https://github.com/kmnxpro/kmnxpro.github.io/tree/master/misc/samples/src/content/getusermedia/gum
+// 7. https://kmnxpro.github.io/misc/samples/src/content/getusermedia/gum/
+// 8. 
 
 
 
