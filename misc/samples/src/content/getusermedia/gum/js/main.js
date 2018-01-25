@@ -24,6 +24,7 @@ var VT;
 //video.autoplay = true;
 //video.playsinline = true;
 
+
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
   audio: false,
@@ -106,8 +107,11 @@ function paintToCanvas() {
   function step() {
     window.requestAnimationFrame(step);
     ctx.drawImage(video, 0, 0, width, height);
-    ctx.fillStyle = 'rgb(200,0,0)'; // sets the color to fill in the rectangle with
-    ctx.fillRect(10, 10, 55, 50);
+    //ctx.fillStyle = 'rgb(200,0,0)'; // sets the color to fill in the rectangle with
+    //ctx.fillRect(10, 10, 55, 50);
+    var pixels = ctx.getImageData(0, 0, width, height);
+    pixels = processedPixels(pixels);
+    ctx.putImageData(pixels, 0, 0);
   }
 
   window.requestAnimationFrame(step);
@@ -117,6 +121,18 @@ function paintToCanvas() {
   console.log("video.width", video.width);
   console.log("video.height", video.height);
 
+}
+
+function processedPixels(pixels) {
+  var pixels = pixels;
+
+  for (var i = 0; i < pixels.data.length; i += 4) {
+    pixels.data[i + 0] = pixels.data[i + 0] + 100;  // red
+    pixels.data[i + 1] = pixels.data[i + 1] - 70;  // green
+    pixels.data[i + 2] = pixels.data[i + 2] - 80;  // blue
+  }
+
+  return pixels;
 }
 
 // END Added 20180124
