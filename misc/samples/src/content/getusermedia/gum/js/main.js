@@ -27,6 +27,8 @@ var VT;
 var wkr = new Worker('worker.js');
 var wkr02 = new Worker('worker02.js');
 
+console.log('WORKERS?', !!window.Worker)
+
 wkr02.postMessage({
   imageData: 'HELLO'
 });
