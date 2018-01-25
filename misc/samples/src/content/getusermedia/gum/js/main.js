@@ -168,8 +168,9 @@ video.addEventListener('resize', function() {
 
 // HELPFUL LINKS
 // 1. https://developers.google.com/web/updates/2016/10/addeventlistener-once
-// 2. 
-// 3. 
+// 2. https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+// 3. https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize
+// 4. 
 
 
 
