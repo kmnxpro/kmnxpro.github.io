@@ -68,6 +68,7 @@ function handleSuccess(stream) {
   video.style.position = 'absolute';
   video.style.top = '0px';
   video.style.left = '0px';
+  video.style.width = '50%';
   video.style['z-index'] = 3;
   // END Added 20180124
 
@@ -96,6 +97,7 @@ function paintToCanvas() {
   canvas.style.position = 'absolute';
   canvas.style.top = '0px';
   canvas.style.left = '0px';
+  canvas.style.width = '50%';
   canvas.style['z-index'] = 5;
 
   function step() {
