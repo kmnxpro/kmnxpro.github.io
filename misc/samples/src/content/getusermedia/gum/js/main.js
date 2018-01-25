@@ -15,6 +15,7 @@ var ctx = canvas.getContext('2d');
 var videoContainer = document.getElementById('video-container');
 var filmstrip = document.getElementById('filmstrip');
 var resizeInfoDIV = document.getElementById('resize-info');
+var cameraFacingMode = "Back";
 var ST;
 var VT;
 
@@ -26,7 +27,9 @@ var VT;
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
   audio: false,
-  video: { facingMode: "environment" } //true   // { facingMode: "user" }
+  video: cameraFacingMode === "Back" ? 
+         { facingMode: "environment" } : 
+         { facingMode: "user" }  //true   // { facingMode: "user" }
 };
 
 function handleSuccess(stream) {
@@ -144,6 +147,10 @@ navigator.mediaDevices.getUserMedia(constraints).
 
 
 // BEGIN Added 20180124
+
+function toggleCameraFacingMode() {
+  console.log('TOGGLE');
+}
 
 video.addEventListener('canplay', paintToCanvas, { once: true });  //false);
 video.addEventListener('resize', function() {
