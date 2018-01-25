@@ -114,9 +114,9 @@ function paintToCanvas() {
     var pixels = ctx.getImageData(0, 0, width, height);
     //pixels = processedPixels(pixels);
     //ctx.putImageData(pixels, 0, 0);
-    //wkr.postMessage({
-    //  imageData: pixels
-    //});
+    wkr.postMessage({
+      imageData: pixels
+    });
 
     /* Setup WebWorker return messaging */
     //wkr.onmessage = function(event) {
@@ -199,6 +199,9 @@ video.addEventListener('resize', function() {
   resizeInfoDIV.innerText = "Width: " + video.videoWidth + " ; Height:" + video.videoHeight;
 }, false);
 
+wkr.addEventListener('message', function(event) {
+  ctx.putImageData(event.data.dstData, 0, 0);
+}, false);
 
 // END Added 20180124
 

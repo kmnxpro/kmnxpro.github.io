@@ -1,5 +1,7 @@
 // message receiver
-onmessage = function(event) {
+//onmessage = function(event) {
+
+self.addEventListener('message', function(event) {
   var imageData = event.data.imageData,
       dst = imageData.data;
 
@@ -10,7 +12,7 @@ onmessage = function(event) {
     dst[i + 2] = dst[i + 2] - 80;  // blue
   }
 
-  postMessage({
+  self.postMessage({
     dstData: imageData
   });
-};
+}, false);
