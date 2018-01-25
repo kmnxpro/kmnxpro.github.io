@@ -24,6 +24,7 @@ var VT;
 //video.autoplay = true;
 //video.playsinline = true;
 
+var wkr = new Worker('worker.js');
 
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
@@ -109,9 +110,13 @@ function paintToCanvas() {
     ctx.drawImage(video, 0, 0, width, height);
     //ctx.fillStyle = 'rgb(200,0,0)'; // sets the color to fill in the rectangle with
     //ctx.fillRect(10, 10, 55, 50);
+    
     var pixels = ctx.getImageData(0, 0, width, height);
-    pixels = processedPixels(pixels);
-    ctx.putImageData(pixels, 0, 0);
+    //pixels = processedPixels(pixels);
+    //ctx.putImageData(pixels, 0, 0);
+    wkr.postMessage({
+      imageData: pixels
+    });
   }
 
   window.requestAnimationFrame(step);
@@ -123,14 +128,14 @@ function paintToCanvas() {
 
 }
 
-function processedPixels(pixels) {
-  var pixels = pixels;
+//function processedPixels(pixels) {
+//  var pixels = pixels;
 
-  for (var i = 0; i < pixels.data.length; i += 4) {
-    pixels.data[i + 0] = pixels.data[i + 0] + 100;  // red
-    pixels.data[i + 1] = pixels.data[i + 1] - 70;  // green
-    pixels.data[i + 2] = pixels.data[i + 2] - 80;  // blue
-  }
+//  for (var i = 0; i < pixels.data.length; i += 4) {
+//    pixels.data[i + 0] = pixels.data[i + 0] + 100;  // red
+//    pixels.data[i + 1] = pixels.data[i + 1] - 70;  // green
+//    pixels.data[i + 2] = pixels.data[i + 2] - 80;  // blue
+//  }
 
   return pixels;
 }
@@ -189,6 +194,11 @@ video.addEventListener('resize', function() {
   resizeInfoDIV.innerText = "Width: " + video.videoWidth + " ; Height:" + video.videoHeight;
 }, false);
 
+/* Setup WebWorker return messaging */
+wkr.onmessage = function(event){
+  ctx.putImageData(event.data.dstData, 0, 0);
+};
+
 // END Added 20180124
 
 
@@ -204,7 +214,9 @@ video.addEventListener('resize', function() {
 // 5. https://github.com/webrtc/samples/blob/gh-pages/src/content/devices/input-output/js/main.js
 // 6. https://github.com/kmnxpro/kmnxpro.github.io/tree/master/misc/samples/src/content/getusermedia/gum
 // 7. https://kmnxpro.github.io/misc/samples/src/content/getusermedia/gum/
-// 8. 
-
+// 8. "image processing javascript web worker"
+//    http://blog.aviary.com/archive/live-image-processing-with-getusermedia-and-web-workers
+//    https://github.com/conorbuck/canvas-video-effects
+// 9. 
 
 
