@@ -29,13 +29,15 @@ var wkr02 = new Worker('worker02.js');
 
 console.log('WORKERS?', !!window.Worker)
 
+wkr02.addEventListener('message', function(event) {
+  console.log(event.data.sss);
+}, false);
+
 wkr02.postMessage({
   imageData: 'HELLO'
 });
 
-wkr02.addEventListener('message', function(event) {
-  console.log(event.data.sss);
-}, false);
+
 
 
 // Put variables in global scope to make them available to the browser console.
