@@ -136,9 +136,9 @@ function paintToCanvas() {
 //    pixels.data[i + 1] = pixels.data[i + 1] - 70;  // green
 //    pixels.data[i + 2] = pixels.data[i + 2] - 80;  // blue
 //  }
-
-  return pixels;
-}
+//
+//  return pixels;
+//}
 
 // END Added 20180124
 
