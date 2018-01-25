@@ -201,6 +201,7 @@ video.addEventListener('resize', function() {
 
 wkr.addEventListener('message', function(event) {
   ctx.putImageData(event.data.dstData, 0, 0);
+  console.log(event.data.dstData);
 }, false);
 
 // END Added 20180124
