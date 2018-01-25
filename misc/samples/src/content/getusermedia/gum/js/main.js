@@ -63,6 +63,9 @@ function handleSuccess(stream) {
 
   // BEGIN Added 20180124
   //video.style['display'] = 'none';
+  video.style.position = 'absolute';
+  video.style.top = '0px';
+  video.style.left = '0px';
   // END Added 20180124
 
 }
