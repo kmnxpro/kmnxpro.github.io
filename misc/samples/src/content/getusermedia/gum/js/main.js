@@ -12,6 +12,7 @@ var errorElement = document.querySelector('#errorMsg');
 var video = document.querySelector('video');
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
+var videoContainer = document.getElementById('video-container');
 var filmstrip = document.getElementById('filmstrip');
 var resizeInfoDIV = document.getElementById('resize-info');
 var ST;
@@ -62,6 +63,7 @@ function handleSuccess(stream) {
   video.srcObject = stream;
 
   // BEGIN Added 20180124
+  videoContainer.style.position = 'relative';
   //video.style['display'] = 'none';
   video.style.position = 'absolute';
   video.style.top = '0px';
