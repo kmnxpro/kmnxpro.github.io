@@ -167,7 +167,10 @@ function processedPixels(pixels, width) {
     var g = dta[i + 1];
     var b = dta[i + 2];
     var gray     = Math.floor(0.299 * r + 0.587 * g + 0.114 * b);
-    // WRONG?  var gray_lum = 0.210 * r + 0.720 * g + 0.070 * b;  // 0.71 * g (?)
+    var gray_lum = Math.floor(0.210 * r + 0.720 * g + 0.070 * b);  // 0.71 * g (?)
+
+    // Comment out to turn off luminance
+    gray = gray_lum
 
     dta[i + 0] = gray  //pixels.data[i + 0] + 100;  // red
     dta[i + 1] = gray  //pixels.data[i + 1] - 70;  // green
@@ -284,7 +287,8 @@ video.addEventListener('resize', function() {
 // 12. https://www.youtube.com/watch?v=ElWFcBlVk-o ("Unreal Webcam Fun with getUserMedia() and HTML5 Canvas - #JavaScript30 19/30")
 // 13. https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
 // 14. https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas
-// 15. 
+// 15. https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled
+// 16. 
 
 
 
