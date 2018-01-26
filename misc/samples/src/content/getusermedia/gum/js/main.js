@@ -152,7 +152,7 @@ function processedPixels(pixels) {
     var r = pixels.data[i + 0];
     var g = pixels.data[i + 1];
     var b = pixels.data[i + 2];
-    var gray = 0.299r + 0.587g + 0.114b;
+    var gray = 0.299 * r + 0.587 * g + 0.114 * b;
 
     pixels.data[i + 0] = gray  //pixels.data[i + 0] + 100;  // red
     pixels.data[i + 1] = gray  //pixels.data[i + 1] - 70;  // green
@@ -245,7 +245,8 @@ video.addEventListener('resize', function() {
 // 11. https://www.html5rocks.com/en/tutorials/workers/basics/
 // 12. https://www.youtube.com/watch?v=ElWFcBlVk-o ("Unreal Webcam Fun with getUserMedia() and HTML5 Canvas - #JavaScript30 19/30")
 // 13. https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
-// 14. 
+// 14. https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Pixel_manipulation_with_canvas
+// 15. 
 
 
 
