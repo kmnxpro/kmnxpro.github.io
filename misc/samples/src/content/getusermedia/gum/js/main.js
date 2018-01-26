@@ -116,6 +116,17 @@ function paintToCanvas() {
   canvas.style.width = '50%';
   canvas.style['z-index'] = 5;
 
+  if (ctx.mozImageSmoothingEnabled || ctx.mozImageSmoothingEnabled ||
+      ctx.msImageSmoothingEnabled  || ctx.imageSmoothingEnabled) {
+
+    ctx.mozImageSmoothingEnabled = false;
+    ctx.webkitImageSmoothingEnabled = false;
+    ctx.msImageSmoothingEnabled = false;
+    ctx.imageSmoothingEnabled = false;
+
+  }
+
+
   function step() {
     window.requestAnimationFrame(step);
     ctx.drawImage(video, 0, 0, width, height);
