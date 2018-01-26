@@ -255,6 +255,8 @@ function toggleCameraFacingMode() {
 
   video.addEventListener('canplay', paintToCanvas, { once: true });  //false);
 
+  wkr02.postMessage('HELLO FROM MAIN');
+
 }
 
 video.addEventListener('canplay', paintToCanvas, { once: true });  //false);
