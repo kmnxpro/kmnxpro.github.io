@@ -27,6 +27,13 @@ var VT;
 
 //var wkr = new Worker('worker.js');
 //var wkr02 = new Worker('./worker02.js');
+var wkr02 = new Worker('worker02.js');
+
+wkr02.addEventListener('message', function (e) {
+  console.log(e.data);
+}, false);
+
+wkr02.postMessage('HELLO FROM MAIN');
 
 //wkr02.addEventListener('message', function(e) {
 //  console.log('Worker said: ', e.data);

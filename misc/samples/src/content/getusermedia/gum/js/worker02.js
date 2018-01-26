@@ -3,6 +3,11 @@
 //  console.log('WOOOO');
 //}, false);
 
-onmessage = function() {
-  postMessage('RANDOM STRING');
-}
+//onmessage = function() {
+//  postMessage('RANDOM STRING');
+//}
+
+
+self.addEventListener('message', function (e) {
+  self.postMessage('HELLO FROM WORKER'); /*draw(e.data));*/
+}, false);
