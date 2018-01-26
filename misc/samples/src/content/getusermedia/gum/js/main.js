@@ -160,7 +160,7 @@ function processedPixels(pixels) {
     dta[i + 1] = gray  //pixels.data[i + 1] - 70;  // green
     dta[i + 2] = gray  //pixels.data[i + 2] - 80;  // blue
 
-    var thresh = gray > 127 ? 255 : 0
+    var thresh = gray > 50 ? 255 : 0
 
     dta[i + 0] = thresh
     dta[i + 1] = thresh
