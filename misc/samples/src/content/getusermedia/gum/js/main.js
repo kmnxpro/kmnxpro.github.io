@@ -35,7 +35,7 @@ wkr02.addEventListener('message', function(e) {
 
 wkr02.postMessage('Hello World'); // Send data to our worker.
 
-
+buttonsDIV.innerText = "WORKER NOT WORKING";
 
 
 // Put variables in global scope to make them available to the browser console.
