@@ -155,8 +155,8 @@ function processedPixels(pixels, width) {
     var r = dta[i + 0];
     var g = dta[i + 1];
     var b = dta[i + 2];
-    var gray     = 0.299 * r + 0.587 * g + 0.114 * b;
-    var gray_lum = 0.210 * r + 0.720 * g + 0.070 * b;  // 0.71 * g (?)
+    var gray     = Math.floor(0.299 * r + 0.587 * g + 0.114 * b);
+    // WRONG?  var gray_lum = 0.210 * r + 0.720 * g + 0.070 * b;  // 0.71 * g (?)
 
     dta[i + 0] = gray  //pixels.data[i + 0] + 100;  // red
     dta[i + 1] = gray  //pixels.data[i + 1] - 70;  // green
@@ -180,9 +180,9 @@ function processedPixels(pixels, width) {
     dta[i + 4] += atkErr;
     dta[i + 8] += atkErr;
     dta[i + (4 * width) - 4] += atkErr;
-    dta[i + (4 * width)] += atkErr;
+    dta[i + (4 * width)]     += atkErr;
     dta[i + (4 * width) + 4] += atkErr;
-    dta[i + (8 * width)] += atkErr;
+    dta[i + (8 * width)]     += atkErr;
 
   }
 
