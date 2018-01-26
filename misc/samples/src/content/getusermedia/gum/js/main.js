@@ -173,7 +173,10 @@ function processedPixels(pixels, width) {
     var atkErr = atkDiffUnit > 0 ? Math.floor(atkDiffUnit) : Math.ceil(atkDiffUnit);
                  //parseInt(gray - atkNewColor) / 8, 10);
 		
-    dta[i] = atkNewColor;
+    dta[i + 0] = atkNewColor;
+    dta[i + 1] = atkNewColor;
+    dta[i + 2] = atkNewColor;
+
     dta[i + 4] += atkErr;
     dta[i + 8] += atkErr;
     dta[i + (4 * width) - 4] += atkErr;
