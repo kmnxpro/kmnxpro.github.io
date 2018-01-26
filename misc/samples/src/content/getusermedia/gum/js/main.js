@@ -147,16 +147,25 @@ function paintToCanvas() {
 
 function processedPixels(pixels) {
   var pixels = pixels;
+  var dta = pixels.data
 
-  for (var i = 0; i < pixels.data.length; i += 4) {
-    var r = pixels.data[i + 0];
-    var g = pixels.data[i + 1];
-    var b = pixels.data[i + 2];
+  // Convert to grayscale
+  for (var i = 0; i < dta.length; i += 4) {
+    var r = dta[i + 0];
+    var g = dta[i + 1];
+    var b = dta[i + 2];
     var gray = 0.299 * r + 0.587 * g + 0.114 * b;
 
-    pixels.data[i + 0] = gray  //pixels.data[i + 0] + 100;  // red
-    pixels.data[i + 1] = gray  //pixels.data[i + 1] - 70;  // green
-    pixels.data[i + 2] = gray  //pixels.data[i + 2] - 80;  // blue
+    dta[i + 0] = gray  //pixels.data[i + 0] + 100;  // red
+    dta[i + 1] = gray  //pixels.data[i + 1] - 70;  // green
+    dta[i + 2] = gray  //pixels.data[i + 2] - 80;  // blue
+
+    var thresh = gray > 127 ? 255 : 0
+
+    dta[i + 0] = thresh
+    dta[i + 1] = thresh
+    dta[i + 2] = thresh
+
   }
 
   return pixels;
