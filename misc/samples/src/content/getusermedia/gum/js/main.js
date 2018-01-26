@@ -162,14 +162,16 @@ function processedPixels(pixels, width) {
     dta[i + 1] = gray  //pixels.data[i + 1] - 70;  // green
     dta[i + 2] = gray  //pixels.data[i + 2] - 80;  // blue
 
-    //var thresh = gray > 127 ? 255 : 0
+    //var thresh = gray > 127 ? 255 : 0;
 
-    //dta[i + 0] = thresh
-    //dta[i + 1] = thresh
-    //dta[i + 2] = thresh
+    //dta[i + 0] = thresh;
+    //dta[i + 1] = thresh;
+    //dta[i + 2] = thresh;
 
-    var atkNewColor = gray > 127 ? 255 : 0
-    var atkErr = parseInt(gray - atkNewColor) / 8, 10);
+    var atkNewColor = gray > 127 ? 255 : 0;
+    var atkDiffUnit = (gray - atkNewColor) / 8;
+    var atkErr = atkDiffUnit > 0 ? Math.floor(atkDiffUnit) : Math.ceil(atkDiffUnit);
+                 //parseInt(gray - atkNewColor) / 8, 10);
 		
     dta[i] = atkNewColor;
     dta[i + 4] += atkErr;
