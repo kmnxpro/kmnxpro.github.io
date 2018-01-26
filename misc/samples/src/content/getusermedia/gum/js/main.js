@@ -16,6 +16,7 @@ var videoContainer = document.getElementById('video-container');
 var filmstrip = document.getElementById('filmstrip');
 var resizeInfoDIV = document.getElementById('resize-info');
 var cameraFacingMode = "Back";
+var buttonsDIV = document.getElementById('buttons');
 var ST;
 var VT;
 
@@ -29,7 +30,7 @@ var wkr02 = new Worker('worker02.js');
 
 wkr02.addEventListener('message', function(e) {
   console.log('Worker said: ', e.data);
-  filmstrip.innerText = "WORKER IS WORKING";
+  buttonsDIV.innerText = "WORKER IS WORKING";
 }, false);
 
 wkr02.postMessage('Hello World'); // Send data to our worker.
