@@ -26,7 +26,7 @@ var VT;
 //video.playsinline = true;
 
 //var wkr = new Worker('worker.js');
-var wkr02 = new Worker('worker02.js');
+var wkr02 = new Worker('./worker02.js');
 
 wkr02.addEventListener('message', function(e) {
   console.log('Worker said: ', e.data);
@@ -237,7 +237,9 @@ video.addEventListener('resize', function() {
 // 9. https://codepen.io/SeanMcBeth/pen/gaqJJg (" #Codevember 17: Automatic Workerization ")
 // 10. http://html5-demos.appspot.com/static/workers/transferables/index.html (web workers demo)
 // 11. https://www.html5rocks.com/en/tutorials/workers/basics/
-// 12. 
+// 12. https://www.youtube.com/watch?v=ElWFcBlVk-o ("Unreal Webcam Fun with getUserMedia() and HTML5 Canvas - #JavaScript30 19/30")
+// 13. https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+// 14. 
 
 
 
