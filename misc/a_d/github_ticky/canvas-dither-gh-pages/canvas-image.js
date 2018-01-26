@@ -1,6 +1,7 @@
 var imageDisplay, displayCanvas, displayContext, displayImage, displayImageData, originalImage;
 var worker		= new Worker('canvas-image-worker.js');
 var fileReader	= new FileReader();
+var retMsg;
 
 function draw () {
 
@@ -77,7 +78,7 @@ worker.addEventListener('message', function (e) {
 
 	}
 
-       console.log(typeof e.data);
+       retMsg = e; //console.log(typeof e.data);
 
 }, false);
 
