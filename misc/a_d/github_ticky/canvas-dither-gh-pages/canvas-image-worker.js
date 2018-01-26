@@ -25,7 +25,7 @@ function draw (data) {
 
 	}
 
-	return data;
+	return 'HELLO FROM WORKER'; //data;
 }
 
 // Convert image data to greyscale based on luminance.
