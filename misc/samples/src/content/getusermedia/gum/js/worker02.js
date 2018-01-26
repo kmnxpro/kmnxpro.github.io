@@ -1,9 +1,3 @@
-//var SELF = self
-
-self.addEventListener('message', function(event) {
-
-
-  self.postMessage('RANDOM STRING') //{
-  //  sss: 'RANDOM STRING'
-  //});
+self.addEventListener('message', function(e) {
+  self.postMessage(e.data);
 }, false);

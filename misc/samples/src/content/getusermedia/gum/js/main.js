@@ -27,15 +27,11 @@ var VT;
 var wkr = new Worker('worker.js');
 var wkr02 = new Worker('worker02.js');
 
-console.log('WORKERS?', !!window.Worker)
-
-wkr02.addEventListener('message', function(event) {
-  console.log(event);
+wkr02.addEventListener('message', function(e) {
+  console.log('Worker said: ', e.data);
 }, false);
 
-wkr02.postMessage('HELLO WORKER');     //{
-//  imageData: 'HELLO'
-//});
+wkr02.postMessage('Hello World'); // Send data to our worker.
 
 
 
