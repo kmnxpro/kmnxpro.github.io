@@ -35,7 +35,6 @@ wkr02.addEventListener('message', function(e) {
 
 wkr02.postMessage('Hello World'); // Send data to our worker.
 
-buttonsDIV.innerText = "WORKER NOT WORKING";
 
 
 // Put variables in global scope to make them available to the browser console.
@@ -237,5 +236,17 @@ video.addEventListener('resize', function() {
 //    https://github.com/conorbuck/canvas-video-effects
 // 9. https://codepen.io/SeanMcBeth/pen/gaqJJg (" #Codevember 17: Automatic Workerization ")
 // 10. http://html5-demos.appspot.com/static/workers/transferables/index.html (web workers demo)
+// 11. https://www.html5rocks.com/en/tutorials/workers/basics/
+// 12. 
+
+
+
+
+
+
+
+
+
+
 
 
