@@ -16,7 +16,7 @@ var videoContainer = document.getElementById('video-container');
 var filmstrip = document.getElementById('filmstrip');
 var resizeInfoDIV = document.getElementById('resize-info');
 var cameraFacingMode = "Back";
-var buttonsDIV = document.getElementById('buttons');
+//var buttonsDIV = document.getElementById('buttons');
 var ST;
 var VT;
 
@@ -26,14 +26,14 @@ var VT;
 //video.playsinline = true;
 
 //var wkr = new Worker('worker.js');
-var wkr02 = new Worker('./worker02.js');
+//var wkr02 = new Worker('./worker02.js');
 
-wkr02.addEventListener('message', function(e) {
-  console.log('Worker said: ', e.data);
-  buttonsDIV.innerText = "WORKER IS WORKING";
-}, false);
+//wkr02.addEventListener('message', function(e) {
+//  console.log('Worker said: ', e.data);
+//  buttonsDIV.innerText = "WORKER IS WORKING";
+//}, false);
 
-wkr02.postMessage('Hello World'); // Send data to our worker.
+//wkr02.postMessage('Hello World'); // Send data to our worker.
 
 
 
@@ -123,8 +123,9 @@ function paintToCanvas() {
     //ctx.fillRect(10, 10, 55, 50);
     
     var pixels = ctx.getImageData(0, 0, width, height);
-    //pixels = processedPixels(pixels);
-    //ctx.putImageData(pixels, 0, 0);
+    pixels = processedPixels(pixels);
+    ctx.putImageData(pixels, 0, 0);
+    
     //wkr.postMessage({
     //  imageData: pixels
     //});
@@ -144,17 +145,17 @@ function paintToCanvas() {
 
 }
 
-//function processedPixels(pixels) {
-//  var pixels = pixels;
+function processedPixels(pixels) {
+  var pixels = pixels;
 
-//  for (var i = 0; i < pixels.data.length; i += 4) {
-//    pixels.data[i + 0] = pixels.data[i + 0] + 100;  // red
-//    pixels.data[i + 1] = pixels.data[i + 1] - 70;  // green
-//    pixels.data[i + 2] = pixels.data[i + 2] - 80;  // blue
-//  }
-//
-//  return pixels;
-//}
+  for (var i = 0; i < pixels.data.length; i += 4) {
+    pixels.data[i + 0] = pixels.data[i + 0] + 100;  // red
+    pixels.data[i + 1] = pixels.data[i + 1] - 70;  // green
+    pixels.data[i + 2] = pixels.data[i + 2] - 80;  // blue
+  }
+
+  return pixels;
+}
 
 // END Added 20180124
 
