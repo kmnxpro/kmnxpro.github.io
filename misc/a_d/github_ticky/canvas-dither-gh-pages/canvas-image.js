@@ -77,7 +77,7 @@ worker.addEventListener('message', function (e) {
 
 	}
 
-       console.log(String(e.data));
+       console.log(typeof e.data);
 
 }, false);
 
