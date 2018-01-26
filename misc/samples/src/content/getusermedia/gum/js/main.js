@@ -25,7 +25,7 @@ var VT;
 //video.autoplay = true;
 //video.playsinline = true;
 
-var wkr = new Worker('worker.js');
+//var wkr = new Worker('worker.js');
 var wkr02 = new Worker('worker02.js');
 
 wkr02.addEventListener('message', function(e) {
