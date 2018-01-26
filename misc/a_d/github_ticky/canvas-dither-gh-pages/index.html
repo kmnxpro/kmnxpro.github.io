@@ -1,0 +1,50 @@
+<!doctype HTML>
+<head>
+	<title>Canvas Dither</title>
+	<link type="text/css" rel="stylesheet" href="style.css" />
+	<script type="text/javascript" src="canvas-image.js"></script>
+</head>
+<body>
+	<div id="imageWrapper">
+		<div id="imageWell">
+			<img id="displayImage" src="target.jpg"/>
+		</div>
+	</div>
+	<dl class="preferences">
+		<dt>Custom Image</dt>
+		<dd>
+			<input type="file" name="fileSelect" id="fileSelect" />
+		</dd>
+		<dt>Greyscale Conversion Method</dt>
+		<dd>
+			<input type="radio" name="greyscale_method" id="rdo_greyscale_luminance" value="Luminance" checked="true" /><label for="rdo_greyscale_luminance">Luminance</label><br/>
+			<input type="radio" name="greyscale_method" id="rdo_greyscale_average" value="RGB Average" /><label for="rdo_greyscale_average">RGB Average</label><br/>
+			<input type="radio" name="greyscale_method" id="rdo_greyscale_disable" value="Disabled" /><label for="rdo_greyscale_disable">Disabled</label><br/>
+		</dd>
+		<dt>Dithering Method</dt>
+		<dd>
+			<input type="radio" name="dither_method" id="rdo_dither_atkinson" value="Atkinson Dithering" checked="true" /><label for="rdo_atkinson">Atkinson Dithering</label><br/>
+			<input type="radio" name="dither_method" id="rdo_dither_threshold" value="Threshold" /><label for="rdo_threshold">Threshold</label><br/>
+			<input id="threshold" type="range" min="0" max="255" value="127" step="1" title="Brightness threshold" />
+		</dd>
+		<dt><input type="checkbox" name="replace_colours" id="chk_replace_colours" /><label for="chk_replace_colours">Replace Colours</label></dt>
+		<dd>
+			<label>Replace black with (R, G, B, A)</label><br/>
+			<input id="rep_black_r" type="range" min="0" max="255" value="0" step="1" /><br/>
+			<input id="rep_black_g" type="range" min="0" max="255" value="0" step="1" /><br/>
+			<input id="rep_black_b" type="range" min="0" max="255" value="0" step="1" /><br/>
+			<input id="rep_black_a" type="range" min="0" max="255" value="255" step="1" /><br/>
+			<label>Replace white with (R, G, B, A)</label><br/>
+			<input id="rep_white_r" type="range" min="0" max="255" value="255" step="1" /><br/>
+			<input id="rep_white_g" type="range" min="0" max="255" value="255" step="1" /><br/>
+			<input id="rep_white_b" type="range" min="0" max="255" value="255" step="1" /><br/>
+			<input id="rep_white_a" type="range" min="0" max="255" value="255" step="1" /><br/>
+		</dd>
+		<dt>Output Format</dt>
+		<dd>
+			<input type="radio" name="output_format" id="rdo_format_png" value="PNG" checked="true" /><label for="rdo_png">PNG</label><br/>
+			<input type="radio" name="output_format" id="rdo_format_gif" value="GIF" /><label for="rdo_gif">GIF</label><br/>
+		</dd>
+		<input type="submit" id="renderbtn" value="Render" /><br/>
+	</dl>
+</body>
