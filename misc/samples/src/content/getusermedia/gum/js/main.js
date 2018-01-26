@@ -149,9 +149,14 @@ function processedPixels(pixels) {
   var pixels = pixels;
 
   for (var i = 0; i < pixels.data.length; i += 4) {
-    pixels.data[i + 0] = pixels.data[i + 0] + 100;  // red
-    pixels.data[i + 1] = pixels.data[i + 1] - 70;  // green
-    pixels.data[i + 2] = pixels.data[i + 2] - 80;  // blue
+    var r = pixels.data[i + 0];
+    var g = pixels.data[i + 1];
+    var b = pixels.data[i + 2];
+    var gray = 0.299r + 0.587g + 0.114b;
+
+    pixels.data[i + 0] = gray  //pixels.data[i + 0] + 100;  // red
+    pixels.data[i + 1] = gray  //pixels.data[i + 1] - 70;  // green
+    pixels.data[i + 2] = gray  //pixels.data[i + 2] - 80;  // blue
   }
 
   return pixels;
