@@ -3,7 +3,7 @@
 self.addEventListener('message', function(event) {
 
 
-  self.postMessage(String(event.data) + 'RANDOM STRING') //{
+  self.postMessage('RANDOM STRING') //{
   //  sss: 'RANDOM STRING'
   //});
 }, false);

@@ -30,7 +30,7 @@ var wkr02 = new Worker('worker02.js');
 console.log('WORKERS?', !!window.Worker)
 
 wkr02.addEventListener('message', function(event) {
-  console.log(event.data);
+  console.log(event);
 }, false);
 
 wkr02.postMessage('HELLO WORKER');     //{
@@ -237,6 +237,7 @@ video.addEventListener('resize', function() {
 // 8. "image processing javascript web worker"
 //    http://blog.aviary.com/archive/live-image-processing-with-getusermedia-and-web-workers
 //    https://github.com/conorbuck/canvas-video-effects
-// 9. 
+// 9. https://codepen.io/SeanMcBeth/pen/gaqJJg (" #Codevember 17: Automatic Workerization ")
+// 10. 
 
 
