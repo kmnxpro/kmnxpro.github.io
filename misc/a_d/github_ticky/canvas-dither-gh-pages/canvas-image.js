@@ -77,6 +77,8 @@ worker.addEventListener('message', function (e) {
 
 	}
 
+       console.log(e);
+
 }, false);
 
 fileReader.onload = function (e) {
