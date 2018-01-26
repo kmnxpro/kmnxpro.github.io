@@ -29,6 +29,7 @@ var wkr02 = new Worker('worker02.js');
 
 wkr02.addEventListener('message', function(e) {
   console.log('Worker said: ', e.data);
+  filmstrip.innerText = "WORKER IS WORKING";
 }, false);
 
 wkr02.postMessage('Hello World'); // Send data to our worker.
@@ -234,6 +235,6 @@ video.addEventListener('resize', function() {
 //    http://blog.aviary.com/archive/live-image-processing-with-getusermedia-and-web-workers
 //    https://github.com/conorbuck/canvas-video-effects
 // 9. https://codepen.io/SeanMcBeth/pen/gaqJJg (" #Codevember 17: Automatic Workerization ")
-// 10. 
+// 10. http://html5-demos.appspot.com/static/workers/transferables/index.html (web workers demo)
 
 
