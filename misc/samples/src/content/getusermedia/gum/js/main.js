@@ -123,7 +123,7 @@ function paintToCanvas() {
     //ctx.fillRect(10, 10, 55, 50);
     
     var pixels = ctx.getImageData(0, 0, width, height);
-    pixels = processedPixels(pixels);
+    pixels = processedPixels(pixels, width);
     ctx.putImageData(pixels, 0, 0);
     
     //wkr.postMessage({
@@ -145,8 +145,9 @@ function paintToCanvas() {
 
 }
 
-function processedPixels(pixels) {
+function processedPixels(pixels, width) {
   var pixels = pixels;
+  var width = width;
   var dta = pixels.data
 
   // Convert to grayscale
@@ -154,17 +155,29 @@ function processedPixels(pixels) {
     var r = dta[i + 0];
     var g = dta[i + 1];
     var b = dta[i + 2];
-    var gray = 0.299 * r + 0.587 * g + 0.114 * b;
+    var gray     = 0.299 * r + 0.587 * g + 0.114 * b;
+    var gray_lum = 0.210 * r + 0.720 * g + 0.070 * b;  // 0.71 * g (?)
 
     dta[i + 0] = gray  //pixels.data[i + 0] + 100;  // red
     dta[i + 1] = gray  //pixels.data[i + 1] - 70;  // green
     dta[i + 2] = gray  //pixels.data[i + 2] - 80;  // blue
 
-    var thresh = gray > 100 ? 255 : 0
+    //var thresh = gray > 127 ? 255 : 0
 
-    dta[i + 0] = thresh
-    dta[i + 1] = thresh
-    dta[i + 2] = thresh
+    //dta[i + 0] = thresh
+    //dta[i + 1] = thresh
+    //dta[i + 2] = thresh
+
+    var atkNewColor = gray > 127 ? 255 : 0
+    var atkErr = parseInt(gray - atkNewColor) / 8, 10);
+		
+    dta[i] = atkNewColor;
+    dta[i + 4] += atkErr;
+    dta[i + 8] += atkErr;
+    dta[i + (4 * width) - 4] += atkErr;
+    dta[i + (4 * width)] += atkErr;
+    dta[i + (4 * width) + 4] += atkErr;
+    dta[i + (8 * width)] += atkErr;
 
   }
 
