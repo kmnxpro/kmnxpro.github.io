@@ -53,9 +53,15 @@ var storage = firebase.storage();
 // Create a storage reference from our storage service
 var storageRef = storage.ref();
 
+// Create a reference to 'mountains.jpg'
+var mountainsRef = storageRef.child('mountains.jpg');
+
+// Create a reference to 'images/mountains.jpg'
+var mountainImagesRef = storageRef.child('images/mountains.jpg');
+
 // Uint8Array
 var bytes = new Uint8Array([0x48, 0x65, 0x6c, 0x6c, 0x6f, 0x2c, 0x20, 0x77, 0x6f, 0x72, 0x6c, 0x64, 0x21]);
-ref.put(bytes).then(function(snapshot) {
+mountainsRef.put(bytes).then(function(snapshot) {
   console.log('Uploaded an array! ABCDE');
 });
 
