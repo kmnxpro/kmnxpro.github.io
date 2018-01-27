@@ -45,6 +45,16 @@ wkr02.addEventListener('message', function (e) {
 //wkr02.postMessage('Hello World'); // Send data to our worker.
 
 
+// FIREBASE
+
+// Get a reference to the storage service, which is used to create references in your storage bucket
+var storage = firebase.storage();
+
+// Create a storage reference from our storage service
+var storageRef = storage.ref();
+
+
+
 
 // Put variables in global scope to make them available to the browser console.
 var constraints = window.constraints = {
